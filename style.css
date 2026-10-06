@@ -33,6 +33,8 @@ body {
 }
 
 h1 {
+  display: block;
+  width: 100%;
   margin: 0 0 2.5rem;
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: 700;
@@ -40,8 +42,7 @@ h1 {
 }
 
 .bokser {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
   gap: 1.25rem;
   max-width: 900px;
   margin: 0 auto;
@@ -49,6 +50,7 @@ h1 {
 
 .boks {
   --aksent: #4f46e5;
+  flex: 1; /* alle tre boksene får lik bredde */
   background: var(--kort);
   border: 1px solid var(--kant);
   border-top: 5px solid var(--aksent);
@@ -80,4 +82,11 @@ h1 {
   font-weight: 700;
   color: var(--aksent);
   font-variant-numeric: tabular-nums;
+}
+
+/* Mobil og smale skjermer: boksene under hverandre */
+@media (max-width: 600px) {
+  .bokser {
+    flex-direction: column;
+  }
 }
