@@ -1,0 +1,11 @@
+.bokser{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.DataModul{
+    width: 200px;
+    padding: 10px;
+    height: 300px;
+}

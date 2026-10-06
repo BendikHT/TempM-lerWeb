@@ -14,10 +14,12 @@
 </head>
 <body>
   <h1>Tempraturmåler</h1>
-  <p>Temperatur: <span id="temp">-</span> °C</p>
-  <p>Lufttrykk: <span id="press">-</span> hPa</p>
-  <p>Sist oppdatert: <span id="tid">-</span></p>
-  <script type="module" src="app.js"></script>
+  <div class="bokser">  
+    <p class="DataModul">Temperatur: <span id="temp">-</span> °C</p>
+    <p class="DataModul">Lufttrykk: <span id="press">-</span> hPa</p>
+    <p class="DataModul">Sist oppdatert: <span id="tid">-</span></p>
+    <script type="module" src="app.js"></script>
+  </div>
   <script>
     // Registrer Service Worker hvis nettleseren støtter det
     if ('serviceWorker' in navigator) {
