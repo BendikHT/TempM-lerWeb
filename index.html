@@ -7,7 +7,7 @@
   <title>Temperatur</title>
   <link rel="icon" type="image/x-icon" href="icon.ico">
   <link rel="stylesheet" href="./style.css">
- 
+
   <!-- Lenke til PWA-manifestet -->
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#4f46e5">
@@ -15,35 +15,34 @@
 
 <body>
   <h1>Temperaturmåler</h1>
+  <p>hei</p>
   <div class="bokser">
-
-    <div class="bokser">
-      <div class="boks">
-        <span class="tittel">Temperatur</span>
-        <span class="verdi"><span id="temp">-</span> °C</span>
-      </div>
-
-      <div class="boks">
-        <span class="tittel">Lufttrykk</span>
-        <span class="verdi"><span id="press">-</span> hPa</span>
-      </div>
-
-      <div class="boks">
-        <span class="tittel">Sist oppdatert</span>
-        <span class="verdi"><span id="tid">-</span></span>
-      </div>
+    <div class="boks">
+      <span class="tittel">Temperatur</span>
+      <span class="verdi"><span id="temp">-</span> °C</span>
     </div>
-    <script type="module" src="app.js"></script>
-    <script>
-      // Registrer Service Worker hvis nettleseren støtter det
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('Service Worker registrert!', reg))
-            .catch(err => console.error('Feil ved registrering:', err));
-        });
-      }
-    </script>
+
+    <div class="boks">
+      <span class="tittel">Lufttrykk</span>
+      <span class="verdi"><span id="press">-</span> hPa</span>
+    </div>
+
+    <div class="boks">
+      <span class="tittel">Sist oppdatert</span>
+      <span class="verdi"><span id="tid">-</span></span>
+    </div>
+  </div>
+  <script type="module" src="app.js"></script>
+  <script>
+    // Registrer Service Worker hvis nettleseren støtter det
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker registrert!', reg))
+          .catch(err => console.error('Feil ved registrering:', err));
+      });
+    }
+  </script>
 </body>
 
 </html>

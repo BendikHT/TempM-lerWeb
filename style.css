@@ -42,11 +42,11 @@ h1 {
 } 
 
 .bokser {
-  display: flex; 
+  display: flex;
+  flex-wrap: wrap; /* Tvinger boksene til å hoppe ned når det ikke er nok plass */
   gap: 1.25rem;
   max-width: 900px;
   margin: 0 auto;
-  flex-wrap: nowrap;
 }
 
 .boks {
@@ -59,6 +59,9 @@ h1 {
   padding: 1.75rem 1rem;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-wrap: wrap;
+  min-width: 100px;
+
 }
 
 .boks:hover {
