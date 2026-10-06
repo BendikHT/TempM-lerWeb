@@ -32,7 +32,11 @@
     </div>
   </div>
   </div>
+  <p style="color: red; font-weight: bold;" id="feil-logg"></p>
   <script>
+     window.onerror = function(msg, url, line) {
+    document.getElementById("feil-logg").innerText = "Mobilfeil: " + msg + " (Linje " + line + ")";
+    };
     // Registrer Service Worker hvis nettleseren støtter det
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
