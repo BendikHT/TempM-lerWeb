@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="no">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temperatur</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="icon.ico">
-  
+
   <!-- Lenke til PWA-manifestet -->
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#4f46e5">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<h1>Temperaturmåler</h1>
-
+  <h1>Tempraturmåler</h1>
   <div class="bokser">
-    <div class="boks">
-      <span class="tittel">Temperatur</span>
-      <span class="verdi"><span id="temp">-</span> °C</span>
-    </div>
+    <h1>Temperaturmåler</h1>
 
-    <div class="boks">
-      <span class="tittel">Lufttrykk</span>
-      <span class="verdi"><span id="press">-</span> hPa</span>
-    </div>
+    <div class="bokser">
+      <div class="boks">
+        <span class="tittel">Temperatur</span>
+        <span class="verdi"><span id="temp">-</span> °C</span>
+      </div>
 
-    <div class="boks">
-      <span class="tittel">Sist oppdatert</span>
-      <span class="verdi"><span id="tid">-</span></span>
+      <div class="boks">
+        <span class="tittel">Lufttrykk</span>
+        <span class="verdi"><span id="press">-</span> hPa</span>
+      </div>
+
+      <div class="boks">
+        <span class="tittel">Sist oppdatert</span>
+        <span class="verdi"><span id="tid">-</span></span>
+      </div>
     </div>
-  </div>
-  </div>
-  <p style="color: red; font-weight: bold;" id="feil-logg"></p>
-  <script>
-     window.onerror = function(msg, url, line) {
-    document.getElementById("feil-logg").innerText = "Mobilfeil: " + msg + " (Linje " + line + ")";
-    };
-    // Registrer Service Worker hvis nettleseren støtter det
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('Service Worker registrert!', reg))
-          .catch(err => console.error('Feil ved registrering:', err));
-      });
-    }
-  </script>
+    <script type="module" src="app.js"></script>
+    <script>
+      // Registrer Service Worker hvis nettleseren støtter det
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registrert!', reg))
+            .catch(err => console.error('Feil ved registrering:', err));
+        });
+      }
+    </script>
 </body>
+
 </html>
