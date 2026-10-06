@@ -1,16 +1,15 @@
 {
-  "name": "Temperaturmåler",
-  "short_name": "Temperaturmåler",
+  "name": "TempMåler Web",
+  "short_name": "TempMåler",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4f46e5",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "./icon.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }

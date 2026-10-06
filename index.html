@@ -8,13 +8,15 @@
   <link rel="icon" type="image/x-icon" href="icon.ico">
   
   <!-- Lenke til PWA-manifestet -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#4f46e5">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Tempraturmåler</h1>
-
+  <p>Temperatur: <span id="temp">-</span> °C</p>
+  <p>Lufttrykk: <span id="press">-</span> hPa</p>
+  <p>Sist oppdatert: <span id="tid">-</span></p>
   <script src="app.js"></script>
   <script>
     // Registrer Service Worker hvis nettleseren støtter det
