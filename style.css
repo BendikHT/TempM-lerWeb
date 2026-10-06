@@ -39,13 +39,14 @@ h1 {
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-}
+} 
 
 .bokser {
-  display: flex;
+  display: flex; 
   gap: 1.25rem;
   max-width: 900px;
   margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
 .boks {
@@ -82,11 +83,5 @@ h1 {
   font-weight: 700;
   color: var(--aksent);
   font-variant-numeric: tabular-nums;
-}
-
-/* Mobil og smale skjermer: boksene under hverandre */
-@media (max-width: 600px) {
-  .bokser {
-    flex-direction: column;
-  }
+  
 }
