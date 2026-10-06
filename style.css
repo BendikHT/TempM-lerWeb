@@ -1,11 +1,83 @@
-.bokser{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+:root {
+  --bg-1: #eef2ff;
+  --bg-2: #f8fafc;
+  --kort: #ffffff;
+  --tekst: #1e293b;
+  --dempet: #64748b;
+  --kant: #e2e8f0;
 }
-.DataModul{
-    width: 200px;
-    padding: 10px;
-    height: 300px;
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-1: #1e1b4b;
+    --bg-2: #0f172a;
+    --kort: #1e293b;
+    --tekst: #f1f5f9;
+    --dempet: #94a3b8;
+    --kant: #334155;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--tekst);
+  background: linear-gradient(160deg, var(--bg-1), var(--bg-2));
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.bokser {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.boks {
+  --aksent: #4f46e5;
+  background: var(--kort);
+  border: 1px solid var(--kant);
+  border-top: 5px solid var(--aksent);
+  border-radius: 16px;
+  padding: 1.75rem 1rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boks:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.14);
+}
+
+.boks:nth-child(1) { --aksent: #f97316; }
+.boks:nth-child(2) { --aksent: #0ea5e9; }
+.boks:nth-child(3) { --aksent: #10b981; }
+
+.tittel {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--dempet);
+}
+
+.verdi {
+  display: block;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--aksent);
+  font-variant-numeric: tabular-nums;
 }

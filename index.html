@@ -13,12 +13,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tempraturmåler</h1>
-  <div class="bokser">  
-    <p class="DataModul">Temperatur: <span id="temp">-</span> °C</p>
-    <p class="DataModul">Lufttrykk: <span id="press">-</span> hPa</p>
-    <p class="DataModul">Sist oppdatert: <span id="tid">-</span></p>
-    <script type="module" src="app.js"></script>
+<h1>Temperaturmåler</h1>
+
+  <div class="bokser">
+    <div class="boks">
+      <span class="tittel">Temperatur</span>
+      <span class="verdi"><span id="temp">-</span> °C</span>
+    </div>
+
+    <div class="boks">
+      <span class="tittel">Lufttrykk</span>
+      <span class="verdi"><span id="press">-</span> hPa</span>
+    </div>
+
+    <div class="boks">
+      <span class="tittel">Sist oppdatert</span>
+      <span class="verdi"><span id="tid">-</span></span>
+    </div>
+  </div>
   </div>
   <script>
     // Registrer Service Worker hvis nettleseren støtter det
